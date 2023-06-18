@@ -10,10 +10,20 @@ function Book(title, author, pages, read) {
     }
   }
 
-
   function addBookToLibrary(title, author, pages, haveRead) {
-
     const newBook = new Book(title, author, pages, haveRead);
     myLibrary += newBook;
     
+  }
+
+  for (let i = 0; i < 4; i++) {
+  const container = document.querySelector('.container');
+
+  const content = document.createElement('book');
+
+  content.classList.add('book');
+  content.textContent = 'This is the glorious text-content!';
+
+  
+    container.appendChild(content);
   }
