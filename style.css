@@ -74,11 +74,59 @@ time, mark, audio, video {
 }
 
 .book{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 300px;
   	height: 100px;
 	margin: 20px;
 	border: 20px;
 	background-color: #782d2d;
-    color: black;
+    /* color: black; */
     text-align: center;
+}
+
+.titlefield{
+	width: 30px;
+  	height: 10px;
+	margin: 2px;
+	border: 2px;
+	/* background-color: #782d2d; */
+    color: rgb(240, 235, 235);
+    text-align: center;
+
+}
+
+.authorfield{
+	width: 30px;
+  	height: 10px;
+	margin: 2px;
+	border: 2px;
+	/* background-color: #782d2d; */
+    color: rgb(240, 235, 235);
+    text-align: center;
+
+}
+
+.pagesfield{
+	width: 30px;
+  	height: 10px;
+	margin: 2px;
+	border: 2px;
+	/* background-color: #782d2d; */
+    color: rgb(240, 235, 235);
+    text-align: center;
+
+}
+
+.readfield{
+	width: 30px;
+  	height: 10px;
+	margin: 2px;
+	border: 2px;
+	/* background-color: #782d2d; */
+    color: rgb(240, 235, 235);
+    text-align: center;
+
 }
