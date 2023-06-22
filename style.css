@@ -39,9 +39,9 @@ time, mark, audio, video {
 }
 
 .form{
-	width: 300px;
-    height: 100px;
-	background-color: #782d2d;
+	width: 100px;
+    /* height: 100px; */
+	background-color: #d8c4c4;
     color: black;
     text-align: center;
 	margin:100px 100px;
@@ -67,9 +67,9 @@ time, mark, audio, video {
     /* align-items: center;
     justify-content: space-between; */
     font-family: 'Roboto', sans-serif;
-    margin:50px 50px;
-	border: 50px;
-	padding: 50px;
+    /* margin:50px 50px; */
+	/* border: 50px; */
+	/* padding: 50px; */
 
 }
 
@@ -77,19 +77,20 @@ time, mark, audio, video {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: space-around;
 	width: 300px;
   	height: 100px;
 	margin: 20px;
 	border: 20px;
-	background-color: #782d2d;
+	background-color: #c69b9b;
     /* color: black; */
     text-align: center;
 }
 
 .titlefield{
-	width: 30px;
-  	height: 10px;
+	align-self: center;
+	/* width: 30px;*/
+  	height: 10px; 
 	margin: 2px;
 	border: 2px;
 	/* background-color: #782d2d; */
@@ -99,8 +100,9 @@ time, mark, audio, video {
 }
 
 .authorfield{
-	width: 30px;
-  	height: 10px;
+	align-self: center;
+	/* width: 30px;*/
+  	height: 10px; 
 	margin: 2px;
 	border: 2px;
 	/* background-color: #782d2d; */
@@ -110,8 +112,9 @@ time, mark, audio, video {
 }
 
 .pagesfield{
-	width: 30px;
-  	height: 10px;
+	align-self: center;
+	/* width: 30px;*/
+  	height: 10px; 
 	margin: 2px;
 	border: 2px;
 	/* background-color: #782d2d; */
@@ -121,7 +124,8 @@ time, mark, audio, video {
 }
 
 .readfield{
-	width: 30px;
+	align-self: center;
+	/* width: 30px; */
   	height: 10px;
 	margin: 2px;
 	border: 2px;

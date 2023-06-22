@@ -12,18 +12,45 @@ function Book(title, author, pages, read, booknumber) {
   }
 
   function addBookToLibrary(title, author, pages, haveRead) {
+    //we'll use bookNumber to store a data attribute 
+    //corresponding to the array position
     let bookNumber = myLibrary.length;
     const newBook = new Book(title, author, pages, haveRead, bookNumber);
-    //we'll use this to store a data attribute 
-    //corresponding to the array position
     myLibrary.push(newBook);  
+    
   }
+
+const bookTitle = document.querySelector("#title")
+const bookAuthor = document.querySelector("#author")
+const bookPages = document.querySelector("#pages")
+const bookRead = document.querySelector("#read")
+const addButton = document.querySelector(".addtolibrary")
+
+addButton.addEventListener('click', (event) => {
+  
+  addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
+  
+  updateLibrary();
+});
+
+// greetMeButton.addEventListener('click', (event) => {
+//    greetingOutput.innerText = `Hello ${name.value}`;
+// })
 
   addBookToLibrary('poo', 'pee', '123', 'haveread');
   addBookToLibrary('dung', 'weenjuice', '432', 'havenotread');
+  
+
+
+function updateLibrary(){
+  const container = document.querySelector('.container');
+
+  while(container.firstElementChild) {
+    container.firstElementChild.remove();
+  }
 
   for (let i = 0; i < myLibrary.length; i++) {
-    const container = document.querySelector('.container');
+    
     const content = document.createElement('book');
     content.classList.add('book');
     container.appendChild(content);
@@ -49,7 +76,8 @@ function Book(title, author, pages, read, booknumber) {
     content.appendChild(rfield);
       
     }
+}
 
-  console.log(myLibrary.length);
-  console.log(myLibrary[0].info());
-  console.log(myLibrary[1].info());
+  // console.log(myLibrary.length);
+  // console.log(myLibrary[0].info());
+  // console.log(myLibrary[1].info());
