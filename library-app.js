@@ -4,7 +4,12 @@ function Book(title, author, pages, read, booknumber) {
     this.title = title
     this.author = author
     this.pages = pages
-    this.read = read
+    if (read == false){
+      this.read = "unread"
+      } else
+      {
+      this.read = "read" 
+    }
     this.booknumber = booknumber
     this.info = function() {
       console.log("'" + title + "'" + " " + "by" + " " + author + ", " + pages + " " + "pages," + " " + read + " " + "Book Number" + " " + booknumber)
@@ -23,24 +28,23 @@ function Book(title, author, pages, read, booknumber) {
 const bookTitle = document.querySelector("#title")
 const bookAuthor = document.querySelector("#author")
 const bookPages = document.querySelector("#pages")
-const bookRead = document.querySelector("#read")
+const bookRead = (document.querySelector('#readstatus'));
+ 
 const addButton = document.querySelector(".addtolibrary")
 
 addButton.addEventListener('click', (event) => {
-  
-  addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
-  
+  addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
   updateLibrary();
 });
 
-// greetMeButton.addEventListener('click', (event) => {
-//    greetingOutput.innerText = `Hello ${name.value}`;
-// })
-
-  addBookToLibrary('poo', 'pee', '123', 'haveread');
-  addBookToLibrary('dung', 'weenjuice', '432', 'havenotread');
+  addBookToLibrary('poo', 'pee', '123', false);
+  addBookToLibrary('dung', 'weenjuice', '432', true);
   
+function removeBook(x){
 
+  myLibrary.splice(x, 1);
+  updateLibrary();
+}
 
 function updateLibrary(){
   const container = document.querySelector('.container');
@@ -74,10 +78,14 @@ function updateLibrary(){
     rfield.classList.add('readfield');
     rfield.textContent = myLibrary[i].read;
     content.appendChild(rfield);
-      
+
+    const button = document.createElement('button');
+    button.innerText = 'Remove' ;
+    content.appendChild(button);
+
+    button.addEventListener('click', () => {
+      removeBook(i);
+      //remove element somehow//
+    })
     }
 }
-
-  // console.log(myLibrary.length);
-  // console.log(myLibrary[0].info());
-  // console.log(myLibrary[1].info());
