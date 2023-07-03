@@ -1,23 +1,29 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read, booknumber) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    if (read == false){
-      this.read = "unread"
-      } else {
-      this.read = "read" 
-      }
-    this.booknumber = booknumber
-    this.info = function() {
-      console.log("'" + title + "'" + " " + "by" + " " + author + ", " + pages + " " + "pages," + " " + read + " " + "Book Number" + " " + booknumber)
+class Book {
+
+    constructor(title, author, pages, read, booknumber){
+      this.title = title
+      this.author = author
+      this.pages = pages
+      this.booknumber = booknumber
+      if (read == false){
+        this.read = "unread"
+        } else {
+        this.read = "read" 
+        }
+    }
+
+    
+    
+    getInfo() {
+      console.log("'" + this.title + "'" + " " + "by" + " " + this.author + ", " + this.pages + " " + "pages," + " " + this.read + " " + "Book Number" + " " + this.booknumber)
     }
   }
 
   function addBookToLibrary(title, author, pages, haveRead) {
     let bookNumber = myLibrary.length;
-    const newBook = new Book(title, author, pages, haveRead, bookNumber);
+    let newBook = new Book(title, author, pages, haveRead, bookNumber);
     myLibrary.push(newBook);    
   }
 
@@ -30,21 +36,9 @@ const addButton = document.querySelector(".addtolibrary")
 addButton.addEventListener('click', (event) => {
   addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
   updateLibrary();
-  // toggle();
-  // let element = document.querySelector(".form");
-  // let hidden = element.getAttribute("hidden");
 
-  // if (hidden) {
-  //    element.removeAttribute("hidden");
-  // } else {
-  //    element.setAttribute("hidden", "hidden");
-  // }
-  
 });
 
-  addBookToLibrary('poo', 'pee', '123', false);
-  addBookToLibrary('dung', 'weenjuice', '432', true);
-  
 
 function updateLibrary(){
   const container = document.querySelector('.container');
@@ -73,18 +67,21 @@ function updateLibrary(){
     pfield.textContent = myLibrary[i].pages;
     content.appendChild(pfield);
 
-    // const rfield = document.createElement('readfield');
-    // rfield.classList.add('readfield');
-    // rfield.textContent = myLibrary[i].read;
-    // content.appendChild(rfield);
     const button1 = document.createElement('button');
     button1.innerText = myLibrary[i].read; ;
     content.appendChild(button1);
 
     button1.addEventListener('click', () => {
+      // changeColor(i);
       toggleText(button1);
       changeRead(i);
     })
+
+    // button1.addEventListener('click', () => {
+    //   changeColor(i);
+    //   // toggleText(button1);
+    //   // changeRead(i);
+    // })
 
     const button2 = document.createElement('button');
     button2.innerText = 'remove' ;
@@ -114,6 +111,7 @@ function removeBook(x){
 }
 
 function toggleText(button) {
+  
   if (button.innerHTML == "read") {
       button.innerHTML = "unread";
   } else if (button.innerHTML == "unread") {
@@ -124,12 +122,29 @@ function toggleText(button) {
 }
 
 function changeRead(x){
+  
   if (myLibrary[x].read == "read") {
     myLibrary[x].read = "unread";
+    // book.style.backgroundColor = "#024906";
 } else if (myLibrary[x].read == "unread") {
-  myLibrary[x].read = "read";
+    myLibrary[x].read = "read";
+    // book.style.backgroundColor = "#001916";
 } else {
     null
 }
 
 }
+
+// function changeColor(x){
+//   let current = document.querySelector('book');
+//   if (myLibrary[x].read  == "read") {
+//     current.style.backgroundColor = "#001916";
+    
+// } else if (myLibrary[x].read  == "unread") {
+//   current.style.backgroundColor = "#024906";
+// } else {
+//     null
+// }
+
+// }
+

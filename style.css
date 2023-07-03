@@ -17,7 +17,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	/* background-color: #024906; */
+	/* color: #ccc; */
+	/* background-color: #ccc; */
 }
 
 .body{
@@ -88,14 +89,15 @@ time, mark, audio, video {
 .book{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: space-around;
+	justify-content: space-evenly;
+	align-items: center;
 	width: 300px;
-  	height: 200px;
+  	height: 300px;
 	margin: 20px;
 	border: 20px;
 	border-radius: 8%;
 	background-color: #024906;
+	font-size: 24px;
     /* color: black; */
     text-align: center;
 }
@@ -237,12 +239,12 @@ time, mark, audio, video {
 	border: none;
 	border-radius: 25px;
 	color: white;
-	margin: 10px;
-	padding: 8px 24px;
+	margin: 4px;
+	padding: 8px 18px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 20px;
 
   }
 
